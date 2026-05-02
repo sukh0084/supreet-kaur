@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>For Supreet Kaur 💕</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Dancing+Script:wght@500;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════
+   RESET & ROOT
+══════════════════════════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+:root{
+  --rose:#c9435a;--blush:#f7b8c4;--gold:#d4a853;
+  --cream:#fff8f0;--petal:#fde8ec;--wine:#7c1f3a;--deep:#2a1020;
+}
+html,body{
+  width:100%;height:100%;overflow:hidden;
+  font-family:'Lato',sans-serif;
+  background:#111;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ══════════════════════════════════════
+   SCREEN SYSTEM  — every screen = 100dvh, no scroll
+══════════════════════════════════════ */
+.screen{
+  position:fixed;inset:0;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  overflow:hidden;
+  opacity:0;pointer-events:none;
+  transition:opacity .55s ease,transform .55s ease;
+  transform:translateY(30px);
+  z-index:1;
+}
+.screen.active{
+  opacity:1;pointer-events:all;
+  transform:translateY(0);
+  z-index:10;
+}
+
+/* ══════════════════════════════════════
+   FLOATING HEARTS  (global layer)
+══════════════════════════════════════ */
+#heartLayer{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.hf{
+  position:absolute;bottom:-60px;
+  animation:floatUp linear forwards;
+  font-size:1.3rem;opacity:0;
+}
+@keyframes floatUp{
+  0%  {transform:translateY(0) rotate(0deg);opacity:.18;}
+  100%{transform:translateY(-110vh) rotate(400deg);opacity:0;}
+}
+
+/* ══════════════════════════════════════
+   BOTTOM NAV BAR
+══════════════════════════════════════ */
+#nav{
+  position:fixed;bottom:0;left:0;right:0;z-index:999;
+  background:rgba(255,248,240,.97);
+  border-top:2px solid var(--blush);
+  display:flex;justify-content:space-around;align-items:center;
+  padding:6px 4px 10px;
+  box-shadow:0 -4px 24px rgba(201,67,90,.15);
+}
+.nav-btn{
+  display:flex;flex-direction:column;align-items:center;
+  background:none;border:none;cursor:pointer;
+  font-family:'Dancing Script',cursive;
+  font-size:.62rem;color:var(--rose);
+  gap:2px;padding:4px 6px;border-radius:12px;
+  transition:background .2s,transform .2s;
+  flex:1;min-width:0;
+}
+.nav-btn .nb-icon{font-size:1.35rem;}
+.nav-btn:active{transform:scale(.92);}
+.nav-btn.on{color:var(--wine);background:var(--petal);font-weight:700;}
+
+/* ══════════════════════════════════════
+   SCREEN 0 — HOME
+══════════════════════════════════════ */
+#s-home{
+  background:linear-gradient(155deg,#fff0f4,#ffe4ef,#fff8f0);
+  text-align:center;padding:24px 24px 90px;
+}
+.h-to{font-family:'Dancing Script',cursive;font-size:1.1rem;color:var(--rose);letter-spacing:2px;margin-bottom:6px;}
+.h-name{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,12vw,5.5rem);color:var(--wine);line-height:1.05;}
+.h-name span{color:var(--rose);font-style:italic;}
+.h-from{font-family:'Dancing Script',cursive;font-size:1rem;color:var(--gold);margin-top:4px;}
+.h-rose{font-size:2.6rem;margin:16px 0;animation:pulse 2s ease-in-out infinite;}
+.h-tag{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(.9rem,3.2vw,1.15rem);color:var(--rose);max-width:340px;line-height:1.75;margin:0 auto 28px;}
+.btn-enter{
+  background:linear-gradient(135deg,var(--rose),var(--wine));
+  color:#fff;border:none;padding:15px 40px;
+  font-family:'Dancing Script',cursive;font-size:1.4rem;
+  border-radius:50px;cursor:pointer;
+  box-shadow:0 8px 28px rgba(201,67,90,.45);
+  animation:glow 2.5s ease-in-out infinite;
+}
+.kiss-rain{font-size:1.8rem;margin-top:22px;letter-spacing:12px;animation:sway 3s ease-in-out infinite;}
+
+/* ══════════════════════════════════════
+   SCREEN 1 — PURPOSE / PROPOSAL
+══════════════════════════════════════ */
+#s-purpose{
+  background:linear-gradient(145deg,#14040e,#38092290,#600f2c);
+  text-align:center;padding:20px 24px 90px;position:relative;
+}
+#s-purpose::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 40%,rgba(201,67,90,.18) 0%,transparent 70%);
+  pointer-events:none;
+}
+.pur-inner{position:relative;z-index:2;max-width:420px;width:100%;}
+.p-heart{font-size:4.5rem;animation:heartbeat .95s ease-in-out infinite;display:block;margin-bottom:8px;}
+.p-title{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,5.5vw,2.2rem);color:var(--blush);line-height:1.3;margin-bottom:10px;}
+.p-text{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(.8rem,2.8vw,.98rem);color:rgba(255,255,255,.82);line-height:1.9;margin-bottom:32px;}
+.love-q{font-family:'Dancing Script',cursive;font-size:clamp(1.1rem,4.5vw,1.5rem);color:var(--blush);margin-bottom:26px;display:block;}
+
+/* button arena — fixed size, relative so NO btn can move inside */
+.btn-arena{
+  position:relative;width:min(340px,88vw);height:110px;
+  margin:0 auto;
+}
+.btn-yes-p{
+  position:absolute;left:0;top:50%;transform:translateY(-50%);
+  background:linear-gradient(135deg,#e8527a,#b8304a);
+  color:#fff;border:none;padding:14px 34px;
+  font-family:'Dancing Script',cursive;font-size:1.35rem;
+  border-radius:50px;cursor:pointer;
+  box-shadow:0 8px 28px rgba(201,67,90,.55);
+  animation:glow 2s ease-in-out infinite;
+  z-index:3;white-space:nowrap;
+}
+.btn-no{
+  position:absolute;right:0;top:50%;transform:translateY(-50%);
+  background:rgba(255,255,255,.1);color:rgba(255,255,255,.75);
+  border:1.5px solid rgba(255,255,255,.25);padding:12px 26px;
+  font-family:'Dancing Script',cursive;font-size:1.2rem;
+  border-radius:50px;cursor:pointer;
+  transition:left .22s cubic-bezier(.25,.46,.45,.94),
+             top  .22s cubic-bezier(.25,.46,.45,.94),
+             right .22s, bottom .22s,
+             opacity .3s,transform .3s;
+  z-index:3;white-space:nowrap;
+}
+
+/* we are us */
+#weAreUs{
+  display:none;margin-top:4px;
+  animation:fadeIn .8s ease;
+}
+.wau-h{font-size:3.2rem;animation:pulse 1.4s ease-in-out infinite;display:block;margin-bottom:6px;}
+.wau-line{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.5rem,5.5vw,2.2rem);color:var(--blush);letter-spacing:1px;margin-bottom:8px;}
+.wau-sub{font-family:'Dancing Script',cursive;font-size:clamp(1rem,3.5vw,1.25rem);color:rgba(255,255,255,.85);line-height:1.8;}
+.wau-conf{font-size:1.6rem;letter-spacing:6px;margin-top:12px;}
+
+/* stars */
+.star{position:absolute;border-radius:50%;background:#fff;animation:twinkle 2s ease-in-out infinite;}
+@keyframes twinkle{0%,100%{opacity:.2;transform:scale(1);}50%{opacity:1;transform:scale(1.8);}}
+
+/* ══════════════════════════════════════
+   SCREEN 2 — HER BEAUTY
+══════════════════════════════════════ */
+#s-beauty{
+  background:linear-gradient(170deg,#fff0f5,#fff8f0);
+  padding:16px 16px 90px;align-items:stretch;overflow-y:auto;
+  justify-content:flex-start;
+}
+#s-beauty::-webkit-scrollbar{display:none;}
+
+/* ══════════════════════════════════════
+   SCREEN 3 — LOVE LETTER
+══════════════════════════════════════ */
+#s-letter{
+  background:linear-gradient(145deg,#fce4ec,#fff8f0,#fde8ec);
+  padding:20px 18px 90px;overflow-y:auto;justify-content:flex-start;
+}
+#s-letter::-webkit-scrollbar{display:none;}
+
+/* ══════════════════════════════════════
+   SCREEN 4 — HUGS & KISSES
+══════════════════════════════════════ */
+#s-hugs{
+  background:radial-gradient(ellipse at center,#ffe0ea,#fff0f5,#fff8f0);
+  padding:20px 18px 90px;overflow-y:auto;justify-content:flex-start;
+  align-items:stretch;
+}
+#s-hugs::-webkit-scrollbar{display:none;}
+
+/* ══════════════════════════════════════
+   SCREEN 5 — WHY I LOVE YOU
+══════════════════════════════════════ */
+#s-reasons{
+  background:linear-gradient(155deg,#fff5f8,#fff8f0);
+  padding:16px 16px 90px;overflow-y:auto;justify-content:flex-start;
+  align-items:stretch;
+}
+#s-reasons::-webkit-scrollbar{display:none;}
+
+/* ══════════════════════════════════════
+   SHARED CONTENT STYLES
+══════════════════════════════════════ */
+.sec-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.5rem,5.5vw,2.4rem);
+  color:var(--wine);text-align:center;margin-bottom:4px;margin-top:10px;
+}
+.sec-sub{
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(1rem,3.8vw,1.25rem);
+  color:var(--rose);text-align:center;margin-bottom:18px;
+}
+
+/* beauty cards */
+.bgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px;width:100%;max-width:700px;margin:0 auto;}
+.bcard{
+  background:#fff;border-radius:18px;padding:18px 14px;text-align:center;
+  box-shadow:0 4px 20px rgba(201,67,90,.1);border:1px solid var(--petal);
+  position:relative;overflow:hidden;
+}
+.bcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blush),var(--rose),var(--gold));}
+.bcard .ico{font-size:2rem;display:block;margin-bottom:8px;}
+.bcard h3{font-family:'Playfair Display',serif;font-size:.9rem;color:var(--wine);margin-bottom:6px;}
+.bcard p{font-size:.75rem;line-height:1.75;color:#6a4050;}
+
+/* love letter */
+.env{
+  background:#fff;border-radius:24px;padding:42px 26px 32px;
+  box-shadow:0 16px 60px rgba(201,67,90,.16);border:1.5px solid var(--petal);
+  position:relative;max-width:640px;width:100%;margin:28px auto 0;
+}
+.seal{position:absolute;top:-26px;left:50%;transform:translateX(-50%);font-size:3rem;animation:pulse 2s ease-in-out infinite;}
+.greet{font-family:'Dancing Script',cursive;font-size:1.6rem;color:var(--rose);margin-bottom:16px;}
+.env p{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(.82rem,2.8vw,.97rem);line-height:2;color:#5a2035;margin-bottom:14px;}
+.signoff{font-family:'Dancing Script',cursive;font-size:1.3rem;color:var(--rose);text-align:right;margin-top:20px;}
+.krow{font-size:1.6rem;margin-top:20px;letter-spacing:8px;animation:bounce 1.5s ease-in-out infinite;text-align:center;}
+
+/* hugs */
+.hug-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;width:100%;max-width:440px;margin:10px auto;}
+.hcard{
+  background:#fff;border-radius:50%;width:clamp(100px,25vw,130px);height:clamp(100px,25vw,130px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  box-shadow:0 6px 22px rgba(201,67,90,.15);cursor:pointer;
+  border:2.5px solid var(--petal);transition:transform .25s,box-shadow .25s;
+}
+.hcard:active{transform:scale(1.14) rotate(-6deg);box-shadow:0 14px 40px rgba(201,67,90,.32);}
+.hcard .hi{font-size:2.2rem;}
+.hcard .hl{font-family:'Dancing Script',cursive;font-size:.75rem;color:var(--rose);margin-top:4px;}
+.big-kiss{font-size:3.8rem;text-align:center;animation:pulse 1.5s ease-in-out infinite;display:block;margin:6px 0;}
+.love-msg{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:clamp(.82rem,2.9vw,.97rem);color:var(--wine);
+  max-width:420px;width:100%;margin:12px auto 0;
+  background:#fff;border-radius:18px;padding:20px;
+  box-shadow:0 4px 20px rgba(201,67,90,.1);border:1px solid var(--petal);
+  transition:opacity .3s,transform .3s;line-height:1.85;text-align:center;
+}
+.xoxo{font-family:'Dancing Script',cursive;font-size:1.2rem;color:var(--rose);margin-top:14px;text-align:center;}
+
+/* reasons */
+.rlist{width:100%;max-width:640px;margin:0 auto;}
+.ritem{
+  display:flex;align-items:flex-start;gap:14px;
+  background:#fff;border-radius:16px;padding:16px 18px;margin-bottom:12px;
+  box-shadow:0 3px 16px rgba(201,67,90,.09);border-left:4px solid var(--rose);
+}
+.rnum{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--blush);font-weight:700;flex-shrink:0;width:36px;}
+.rtxt{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(.8rem,2.7vw,.93rem);color:#5a2035;line-height:1.8;}
+.endnote{font-family:'Dancing Script',cursive;font-size:1.35rem;color:var(--rose);text-align:center;margin-top:20px;margin-bottom:8px;}
+
+/* ══════════════════════════════════════
+   ANIMATIONS
+══════════════════════════════════════ */
+@keyframes pulse    {0%,100%{transform:scale(1);}50%{transform:scale(1.18);}}
+@keyframes heartbeat{0%,100%{transform:scale(1);}14%{transform:scale(1.38);}28%{transform:scale(1);}42%{transform:scale(1.38);}}
+@keyframes sway     {0%,100%{transform:rotate(-4deg);}50%{transform:rotate(4deg);}}
+@keyframes bounce   {0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+@keyframes glow     {0%,100%{box-shadow:0 8px 30px rgba(201,67,90,.5);}50%{box-shadow:0 8px 50px rgba(201,67,90,.9),0 0 24px rgba(247,184,196,.55);}}
+@keyframes fadeIn   {from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── MUSIC TOGGLE BUTTON ── */
+#musicBtn{
+  position:fixed;top:12px;right:14px;z-index:99999;
+  width:42px;height:42px;border-radius:50%;
+  background:rgba(255,255,255,0.92);
+  border:2px solid var(--blush);
+  font-size:1.25rem;cursor:pointer;
+  box-shadow:0 4px 16px rgba(201,67,90,0.25);
+  transition:transform .2s,box-shadow .2s;
+  display:flex;align-items:center;justify-content:center;
+  animation:pulse 2.5s ease-in-out infinite;
+}
+#musicBtn:active{transform:scale(.88);}
+#musicBtn.muted{opacity:.5;animation:none;}
+</style>
+</head>
+<body>
+
+<!-- ── BACKGROUND MUSIC ── -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ── MUSIC TOGGLE BUTTON ── -->
+<button id="musicBtn" onclick="toggleMusic()" title="Toggle Music">
+  🎵
+</button>
+
+<!-- ── GLOBAL HEART LAYER ── -->
+<div id="heartLayer"></div>
+
+<!-- ══════════════════════════════════════
+     SCREEN 0 — HOME
+══════════════════════════════════════ -->
+<div class="screen active" id="s-home">
+  <div class="home-inner" style="text-align:center;padding:24px;z-index:2;position:relative;">
+    <div class="h-to">✨ A world created just for ✨</div>
+    <div class="h-name"><span>Supreet</span><br>Kaur</div>
+    <div class="h-from">— with all my heart, Sukhpreet Singh</div>
+    <div class="h-rose">🌹</div>
+    <p class="h-tag">"In a universe of a billion stars, you are the one that lights up my entire world."</p>
+    <button class="btn-enter" onclick="goScreen('s-purpose','nb-purpose')">
+      Enter Our World 💕
+    </button>
+    <div class="kiss-rain" style="margin-top:20px;">💋 💋 💋 💋 💋</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     SCREEN 1 — PURPOSE / PROPOSAL
+══════════════════════════════════════ -->
+<div class="screen" id="s-purpose">
+  <div id="starLayer"></div>
+  <div class="pur-inner">
+    <span class="p-heart">❤️</span>
+    <div class="p-title">Supreet Kaur,<br>You Are My Everything</div>
+    <p class="p-text">
+      Every morning I wake up grateful the universe brought you into my life.
+      You are my best friend, my safe place, my home.
+      I promise to love you in the loudest and quietest ways —
+      your sunshine on dark days and your anchor in every storm.
+    </p>
+    <span class="love-q">Do you love me? 🥺</span>
+
+    <!-- arena where No button runs around -->
+    <div class="btn-arena" id="btnArena">
+      <button class="btn-yes-p" onclick="sayYes()">💕 Yes, I Do! 💕</button>
+      <button class="btn-no" id="noBtn"
+              onmouseover="runNo()" ontouchstart="runNo()" onclick="runNo()">
+        No 🙈
+      </button>
+    </div>
+
+    <!-- shown after Yes -->
+    <div id="weAreUs">
+      <span class="wau-h">💞</span>
+      <div class="wau-line">We Are Us 💕</div>
+      <div class="wau-sub">
+        Now &amp; forever, Supreet Kaur &amp; Sukhpreet Singh.<br>
+        Two hearts, one beautiful story. 🌹
+      </div>
+      <div class="wau-conf">🎊 💋 ❤️ 🌹 🎉 😘</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     SCREEN 2 — HER BEAUTY
+══════════════════════════════════════ -->
+<div class="screen" id="s-beauty">
+  <div class="sec-title">The Magic That Is You</div>
+  <div class="sec-sub">Every part of you is a poem, Supreet 🌸</div>
+  <div class="bgrid">
+    <div class="bcard"><span class="ico">💆‍♀️</span><h3>Your Beautiful Hair</h3><p>Every strand catches light like a crown you never knew you wore. Whether tied or flowing, it's breathtaking.</p></div>
+    <div class="bcard"><span class="ico">🌸</span><h3>Your Perfect Slimness</h3><p>Graceful and elegant — the way you carry yourself is pure poetry in motion.</p></div>
+    <div class="bcard"><span class="ico">🌺</span><h3>Your Fluffy Cheeks</h3><p>Soft as rose petals. When you smile and they rise up, the whole world becomes brighter.</p></div>
+    <div class="bcard"><span class="ico">👁️</span><h3>Your Beautiful Eyes</h3><p>Deep and magnetic — one glance and I am completely lost. In your eyes I found my home.</p></div>
+    <div class="bcard"><span class="ico">🎵</span><h3>Your Voice</h3><p>Warm, soft, musical — even simple words sound like a lullaby. My favourite sound in this world.</p></div>
+    <div class="bcard"><span class="ico">💬</span><h3>The Way You Speak</h3><p>Thoughtful yet playful, sweet yet strong. When you speak, everyone listens.</p></div>
+    <div class="bcard"><span class="ico">😊</span><h3>Your Smile</h3><p>Your smile could start sunrises. Genuine, radiant, and pure — please never stop smiling.</p></div>
+    <div class="bcard"><span class="ico">💃</span><h3>Your Grace &amp; Aura</h3><p>You carry your own light wherever you go. Effortlessly captivating.</p></div>
+    <div class="bcard"><span class="ico">🌙</span><h3>Your Gentle Heart</h3><p>Your kindness makes you infinitely more beautiful. Inside and out — you are everything.</p></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     SCREEN 3 — LOVE LETTER
+══════════════════════════════════════ -->
+<div class="screen" id="s-letter">
+  <div class="sec-title" style="margin-top:20px;">A Letter For You</div>
+  <div class="env">
+    <div class="seal">💌</div>
+    <div class="greet">My Dearest Supreet,</div>
+    <p>I have searched a thousand words to tell you how I feel, and yet every sentence feels too small. You changed everything for me. Before you, life was ordinary. With you, every day feels like the most beautiful dream I never want to wake from.</p>
+    <p>I love the way your eyes crinkle when you laugh. I love the way you say my name — there is a warmth in it no one else can replicate. Your presence makes every room warmer and every silence feel safe.</p>
+    <p>You are not just beautiful on the outside — you are luminous on the inside too. Your kindness, your laughter, your spirit — the reasons I fall in love with you again, every single day.</p>
+    <p>In this life and any other, I would choose you. A thousand times. Without hesitation. Just you, Supreet Kaur.</p>
+    <p>You are my favourite chapter. And I never want it to end.</p>
+    <div class="signoff">Forever yours,<br>Sukhpreet Singh 🌹</div>
+  </div>
+  <div class="krow">💋 💋 💋 💋 💋</div>
+</div>
+
+<!-- ══════════════════════════════════════
+     SCREEN 4 — HUGS & KISSES
+══════════════════════════════════════ -->
+<div class="screen" id="s-hugs">
+  <div class="sec-title" style="margin-top:12px;">Sending You All My Love</div>
+  <div class="sec-sub">Every hug &amp; kiss — all yours 🫶</div>
+  <span class="big-kiss">😘</span>
+  <div class="hug-grid">
+    <div class="hcard" onclick="setMsg('☀️ Morning kiss — waking up thinking of you! 💋')"><span class="hi">💋</span><span class="hl">Morning Kiss</span></div>
+    <div class="hcard" onclick="setMsg('🌙 Goodnight hug — sleep tight my love! 🤗')"><span class="hi">🤗</span><span class="hl">Goodnight Hug</span></div>
+    <div class="hcard" onclick="setMsg('💕 I miss you so much. Come back soon!')"><span class="hi">💕</span><span class="hl">I Miss You</span></div>
+    <div class="hcard" onclick="setMsg('🫂 The tightest forever hug — just for you!')"><span class="hi">🫂</span><span class="hl">Forever Hug</span></div>
+    <div class="hcard" onclick="setMsg('😚 A soft kiss on your fluffy cheeks! ✨')"><span class="hi">😚</span><span class="hl">Cheek Kiss</span></div>
+    <div class="hcard" onclick="setMsg('🌹 Blown kiss straight from my heart! 😘❤️')"><span class="hi">🌹</span><span class="hl">Blown Kiss</span></div>
+  </div>
+  <div class="love-msg" id="loveMsg">"If I could give you one thing, it would be the ability to see yourself through my eyes — only then would you understand how special you are."</div>
+  <p class="xoxo">X O X O X O — Sukhpreet 💋</p>
+</div>
+
+<!-- ══════════════════════════════════════
+     SCREEN 5 — WHY I LOVE YOU
+══════════════════════════════════════ -->
+<div class="screen" id="s-reasons">
+  <div class="sec-title" style="margin-top:12px;">Why I Love You</div>
+  <div class="sec-sub">Let me count the ways 💗</div>
+  <div class="rlist">
+    <div class="ritem"><div class="rnum">01</div><div class="rtxt">Because your smile makes every bad day disappear instantly.</div></div>
+    <div class="ritem"><div class="rnum">02</div><div class="rtxt">Because your laughter is the most joyful sound my ears have ever known.</div></div>
+    <div class="ritem"><div class="rnum">03</div><div class="rtxt">Because you make me want to be a better person just by being who you are.</div></div>
+    <div class="ritem"><div class="rnum">04</div><div class="rtxt">Because even on your most ordinary days, you are extraordinary to me.</div></div>
+    <div class="ritem"><div class="rnum">05</div><div class="rtxt">Because your heart is as beautiful as your face — and that is saying everything.</div></div>
+    <div class="ritem"><div class="rnum">06</div><div class="rtxt">Because the way you care for the people you love shows what an incredible soul you have.</div></div>
+    <div class="ritem"><div class="rnum">07</div><div class="rtxt">Because you understand me in ways I didn't know I needed to be understood.</div></div>
+    <div class="ritem"><div class="rnum">08</div><div class="rtxt">Because even the thought of you makes my heart feel completely full.</div></div>
+    <div class="ritem"><div class="rnum">09</div><div class="rtxt">Because you're the first person I want to tell everything to — good, bad, and silly.</div></div>
+    <div class="ritem"><div class="rnum">10</div><div class="rtxt">Because with you, I found my favourite place in the entire world — right beside you.</div></div>
+    <div class="ritem"><div class="rnum">11</div><div class="rtxt">Because you make silence comfortable and conversations magical — all at once.</div></div>
+    <div class="ritem"><div class="rnum">12</div><div class="rtxt">Because the way your eyes light up when you're happy is the most beautiful sight I know.</div></div>
+  </div>
+  <div class="endnote">💕 And a million more reasons, forever... 💕</div>
+</div>
+
+<!-- ══════════════════════════════════════
+     BOTTOM NAV
+══════════════════════════════════════ -->
+<div id="nav">
+  <button class="nav-btn on" id="nb-home"    onclick="goScreen('s-home','nb-home')">
+    <span class="nb-icon">🏠</span>Home
+  </button>
+  <button class="nav-btn" id="nb-purpose" onclick="goScreen('s-purpose','nb-purpose')">
+    <span class="nb-icon">💍</span>Propose
+  </button>
+  <button class="nav-btn" id="nb-beauty"  onclick="goScreen('s-beauty','nb-beauty')">
+    <span class="nb-icon">✨</span>Beauty
+  </button>
+  <button class="nav-btn" id="nb-letter"  onclick="goScreen('s-letter','nb-letter')">
+    <span class="nb-icon">💌</span>Letter
+  </button>
+  <button class="nav-btn" id="nb-hugs"    onclick="goScreen('s-hugs','nb-hugs')">
+    <span class="nb-icon">🤗</span>Hugs
+  </button>
+  <button class="nav-btn" id="nb-reasons" onclick="goScreen('s-reasons','nb-reasons')">
+    <span class="nb-icon">💕</span>Reasons
+  </button>
+</div>
+
+<script>
+/* ══════════════════════════════════════
+   BACKGROUND MUSIC
+══════════════════════════════════════ */
+var music   = document.getElementById('bgMusic');
+var musicBtn= document.getElementById('musicBtn');
+var playing = false;
+
+// Try to autoplay immediately (works if browser allows)
+music.volume = 0.45;
+music.play().then(function(){
+  playing = true;
+  musicBtn.textContent = '🎵';
+}).catch(function(){
+  // Autoplay blocked — start on first user touch/click
+  playing = false;
+  musicBtn.textContent = '▶️';
+});
+
+// Start music on very first interaction anywhere on page
+function startOnTouch(){
+  if(!playing){
+    music.play().then(function(){
+      playing = true;
+      musicBtn.textContent = '🎵';
+      musicBtn.classList.remove('muted');
+    }).catch(function(){});
+  }
+  document.removeEventListener('touchstart', startOnTouch);
+  document.removeEventListener('click',      startOnTouch);
+}
+document.addEventListener('touchstart', startOnTouch, {once:true});
+document.addEventListener('click',      startOnTouch, {once:true});
+
+function toggleMusic(){
+  if(playing){
+    music.pause();
+    playing = false;
+    musicBtn.textContent = '🔇';
+    musicBtn.classList.add('muted');
+  } else {
+    music.play();
+    playing = true;
+    musicBtn.textContent = '🎵';
+    musicBtn.classList.remove('muted');
+  }
+}
+
+/* ══════════════════════════════════════
+   NAVIGATION
+══════════════════════════════════════ */
+function goScreen(screenId, navId) {
+  // hide all screens
+  document.querySelectorAll('.screen').forEach(function(s) {
+    s.classList.remove('active');
+  });
+  // deactivate all nav buttons
+  document.querySelectorAll('.nav-btn').forEach(function(b) {
+    b.classList.remove('on');
+  });
+  // show target screen
+  var sc = document.getElementById(screenId);
+  if (sc) {
+    sc.classList.add('active');
+    // scroll inner content to top
+    sc.scrollTop = 0;
+  }
+  // highlight nav button
+  var nb = document.getElementById(navId);
+  if (nb) nb.classList.add('on');
+}
+
+/* ══════════════════════════════════════
+   FLOATING HEARTS
+══════════════════════════════════════ */
+var EMO = ['❤️','💕','🌹','💋','💗','😘','🌸','💖','✨','🫶'];
+function spawnHeart() {
+  var el = document.createElement('div');
+  el.className = 'hf';
+  el.textContent = EMO[Math.floor(Math.random() * EMO.length)];
+  el.style.left   = (Math.random() * 98) + '%';
+  el.style.fontSize = (0.9 + Math.random() * 1.2) + 'rem';
+  var dur = 9 + Math.random() * 10;
+  el.style.animationDuration = dur + 's';
+  el.style.animationDelay   = '0s';
+  document.getElementById('heartLayer').appendChild(el);
+  setTimeout(function() { el.remove(); }, dur * 1000);
+}
+// initial burst
+for (var i = 0; i < 18; i++) {
+  (function(i){ setTimeout(spawnHeart, i * 500); })(i);
+}
+setInterval(spawnHeart, 1100);
+
+/* ══════════════════════════════════════
+   STARS ON PURPOSE SCREEN
+══════════════════════════════════════ */
+var sl = document.getElementById('starLayer');
+sl.style.cssText = 'position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;';
+for (var s = 0; s < 80; s++) {
+  var d = document.createElement('div');
+  d.className = 'star';
+  var sz = (1 + Math.random() * 2) + 'px';
+  d.style.cssText =
+    'width:' + sz + ';height:' + sz +
+    ';left:' + (Math.random()*100) + '%' +
+    ';top:'  + (Math.random()*100) + '%' +
+    ';animation-delay:' + (Math.random()*3) + 's' +
+    ';animation-duration:' + (1.5 + Math.random()*2) + 's';
+  sl.appendChild(d);
+}
+
+/* ══════════════════════════════════════
+   "NO" BUTTON RUNS AWAY
+══════════════════════════════════════ */
+var noBtn   = document.getElementById('noBtn');
+var arena   = document.getElementById('btnArena');
+var runCount = 0;
+
+function runNo() {
+  runCount++;
+  var aW = arena.offsetWidth;
+  var aH = arena.offsetHeight;
+  var bW = noBtn.offsetWidth;
+  var bH = noBtn.offsetHeight;
+
+  // random position fully within arena
+  var maxX = Math.max(0, aW - bW);
+  var maxY = Math.max(0, aH - bH);
+  var nx   = Math.random() * maxX;
+  var ny   = Math.random() * maxY;
+
+  // switch to absolute position mode (remove right/top default)
+  noBtn.style.right  = 'auto';
+  noBtn.style.bottom = 'auto';
+  noBtn.style.left   = nx + 'px';
+  noBtn.style.top    = ny + 'px';
+  noBtn.style.transform = 'scale(' + Math.max(0.55, 1 - runCount * 0.05) + ')';
+  noBtn.style.opacity   = Math.max(0.15, 1 - runCount * 0.07) + '';
+}
+
+/* ══════════════════════════════════════
+   "YES" BUTTON — show We Are Us
+══════════════════════════════════════ */
+function sayYes() {
+  document.getElementById('btnArena').style.display = 'none';
+  document.querySelector('.love-q') && (document.querySelector('.love-q').style.display = 'none');
+  document.getElementById('weAreUs').style.display = 'block';
+
+  // burst hearts
+  var B = ['💕','❤️','💋','🌹','✨','🎉','😘','🫶','💞','🌸'];
+  for (var i = 0; i < 22; i++) {
+    (function(i){
+      setTimeout(function() {
+        var el = document.createElement('div');
+        el.style.cssText =
+          'position:fixed;z-index:99999;pointer-events:none;' +
+          'font-size:' + (1.2 + Math.random()*2) + 'rem;' +
+          'left:' + (Math.random()*100) + '%;' +
+          'top:'  + (10 + Math.random()*80) + '%;' +
+          'transition:opacity 1.6s ease,transform 1.6s ease;opacity:1;';
+        el.textContent = B[Math.floor(Math.random()*B.length)];
+        document.body.appendChild(el);
+        setTimeout(function(){ el.style.opacity='0'; el.style.transform='translateY(-90px) scale(.4)'; }, 80);
+        setTimeout(function(){ el.remove(); }, 1900);
+      }, i * 100);
+    })(i);
+  }
+}
+
+/* ══════════════════════════════════════
+   HUG MESSAGES
+══════════════════════════════════════ */
+function setMsg(msg) {
+  var el = document.getElementById('loveMsg');
+  el.style.opacity = '0';
+  el.style.transform = 'scale(.95)';
+  setTimeout(function(){
+    el.textContent = msg;
+    el.style.opacity = '1';
+    el.style.transform = 'scale(1)';
+  }, 250);
+}
+</script>
+</body>
+</html>
